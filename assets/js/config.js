@@ -20,8 +20,9 @@ window.NGR_CONFIG = {
   contact: '各班教練或 NID 官方 LINE',
 
   /* NID 官方 LINE：報名完成會跳出視窗，請學員截圖傳給小編。
-   * id = 官方帳號的 LINE ID（@ 開頭，取自 NID 官網）；留空就不顯示 LINE 按鈕。 */
-  line: { id: '@eei8717i', name: 'NID 官方 LINE' },
+   * url = 官方帳號頁面，「傳給官方 LINE 小編」按鈕直接開這個網址；
+   * id = 官方帳號的 LINE ID（@ 開頭）；url 和 id 都留空就不顯示 LINE 按鈕。 */
+  line: { id: '@eei8717i', name: 'NID 官方 LINE', url: 'https://page.line.me/eei8717i?openQrModal=true' },
 
   /* 大會官方頁面 */
   officialUrl: 'https://irunner.biji.co/2027NGR',
