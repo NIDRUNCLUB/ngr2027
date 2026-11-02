@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- ARTIFACT:HEAD-START -->
+<title>NID 國家地理路跑團報</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100..125,500..900;1,100..125,700..900&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<!-- ARTIFACT:HEAD-END -->
+<meta name="description" content="NID RUN CLUB 2027 國家地理路跑 RUN FOR EARTH 團體報名：組別費用、路線、紀念品、尺寸表與線上報名。">
+<meta name="theme-color" content="#0b0b0c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NID RUN CLUB｜2027 國家地理路跑團報">
+<meta property="og:description" content="2027.03.14 凱達格蘭大道起跑｜21K・10K・5K｜NID 學員與親友團報，線上填表＋匯款後五碼即完成報名。">
+<meta property="og:url" content="https://nidrunclub.github.io/ngr2027/">
+<meta property="og:image" content="https://nidrunclub.github.io/ngr2027/assets/img/og.jpg">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+</head>
+<body>
+<!-- ARTIFACT:BODY-START -->
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="#hero" aria-label="回到頁首">
+      <img src="assets/img/nidrc-logo.png" alt="NID RUN CLUB" width="517" height="120">
+      <span class="brand__x">× NAT GEO RUN 2027</span>
+    </a>
+    <nav class="topnav" aria-label="頁面導覽">
+      <a href="#categories">組別費用</a>
+      <a href="#route">賽事路線</a>
+      <a href="#kit">紀念品</a>
+      <a href="#pay">匯款資訊</a>
+      <a href="#faq">注意事項</a>
+    </nav>
+    <button class="btn btn--sun btn--sm js-open-terms" type="button">我要報名</button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow">NID RUN CLUB 團體報名</p>
+        <h1 class="hero__title">
+          <span class="lat">2027 NAT GEO RUN</span>
+          國家地理路跑
+          <span class="tag">RUN FOR EARTH・跟 NID 一起為地球而跑</span>
+        </h1>
+        <ul class="hero__facts">
+          <li><b class="lat num">03.14</b><span>2027 星期日・<em class="whiteday">白色情人節</em></span></li>
+          <li><b class="lat num">05:30</b><span>21K 鳴槍起跑</span></li>
+          <li><b>凱達格蘭大道</b><span>21K・10K 起跑</span></li>
+          <li><b>大佳河濱公園</b><span>5K 起跑・主會場</span></li>
+        </ul>
+        <div class="hero__cta">
+          <button class="btn btn--sun btn--lg js-open-terms" type="button">我要報名 <span class="arrow" aria-hidden="true">→</span></button>
+          <a class="btn btn--ghost btn--lg" href="#categories">看組別與費用</a>
+        </div>
+        <div class="period" id="period">
+          <span class="period__label">團報時間</span>
+          <b class="period__dates" id="periodText">11/03（二）00:00 – 11/09（一）23:59</b>
+          <span class="period__status" id="phaseText" data-phase="open">報名中</span>
+        </div>
+        <p class="hero__meta"><span id="statsText" class="live" hidden></span></p>
+      </div>
+      <figure class="hero__frame">
+        <img src="assets/img/hero.webp" alt="2027 國家地理路跑主視覺：跑者穿過黃色相框，奔向台北的綠地與天際線" width="805" height="562" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <!-- CATEGORIES + FEES -->
+  <section class="band" id="categories">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">Categories & Fees</p>
+        <h2 class="band__title">組別與費用</h2>
+        <p class="band__lead">報名費依大會公告。團報每人另加<b>運費</b>：當期學員和學員的小孩 <b class="num" data-cfg="shipStudent">NT$50</b>、非當期學員 <b class="num" data-cfg="shipGuest">NT$80</b><span data-needs-chip>；21K、10K 另加大會規定的<b>晶片押金 <span class="num" data-cfg="chip">NT$100</span></b>，比賽當天歸還晶片即退還</span>。</p>
+      </div>
+
+      <div class="dist-groups" id="distGroups"><!-- rendered from config.js --></div>
+
+      <h3 class="sub-title">團報應匯金額一覽</h3>
+      <div class="formula" aria-label="應匯金額計算方式">
+        <div class="formula__item"><b>報名費</b><span>依組別</span></div>
+        <span class="formula__op" aria-hidden="true" data-needs-chip>+</span>
+        <div class="formula__item" data-needs-chip><b class="num" data-cfg="chipShort">晶片押金 100</b><span>21K・10K（可退）</span></div>
+        <span class="formula__op" aria-hidden="true">+</span>
+        <div class="formula__item"><b class="num" data-cfg="shipShort">運費 50 / 80</b><span>當期學員（含小孩）/ 非當期學員</span></div>
+        <span class="formula__op" aria-hidden="true">+</span>
+        <div class="formula__item"><b>加購</b><span>選填</span></div>
+        <span class="formula__op" aria-hidden="true">=</span>
+        <div class="formula__item formula__item--sum"><b>應匯金額</b><span>一人一筆匯款</span></div>
+      </div>
+      <div class="table-scroll">
+        <table class="fees" id="feeTable">
+          <thead>
+            <tr><th scope="col">組別</th><th scope="col">報名費</th><th scope="col">晶片押金</th><th scope="col">當期學員應匯</th><th scope="col">非當期學員應匯</th></tr>
+          </thead>
+          <tbody><!-- rendered from config.js --></tbody>
+        </table>
+      </div>
+      <p class="fine">金額不含加購。<b>升級組</b>內含大會規範衣保袋：21K、10K 寄物一律要用符合規格的衣保袋。5K 不提供寄物。</p>
+
+      <h3 class="sub-title">比賽日時間軸</h3>
+      <ol class="timeline">
+        <li><time>04:00</time><span>開放寄物（21K 05:00、10K 05:20 前完成，保管到 09:30）</span></li>
+        <li class="d21"><time>05:30</time><span>21K 半馬組鳴槍・限時 210 分鐘</span></li>
+        <li class="d10"><time>05:50</time><span>10K 挑戰組鳴槍・限時 100 分鐘</span></li>
+        <li class="d10"><time>06:00</time><span>10K 慢跑組鳴槍・限時 100 分鐘</span></li>
+        <li class="d10"><time>07:40</time><span>10K 比賽結束</span></li>
+        <li class="d5"><time>08:00</time><span>5K 休閒組鳴槍・限時 90 分鐘</span></li>
+        <li class="d5"><time>08:10</time><span>5K 親子組鳴槍</span></li>
+        <li class="d21"><time>09:00</time><span>21K 比賽結束</span></li>
+        <li class="d5"><time>09:40</time><span>5K 比賽結束</span></li>
+        <li><time>10:30</time><span>活動結束・歸還晶片退押金截止</span></li>
+      </ol>
+      <p class="fine">實際流程以大會現場公告為準。</p>
+    </div>
+  </section>
+
+  <!-- ROUTE -->
+  <section class="band band--alt" id="route">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">Course Maps</p>
+        <h2 class="band__title">賽事路線</h2>
+        <p class="band__lead">21K、10K 從總統府前凱達格蘭大道出發，沿新生高架進入河濱，終點都在大佳河濱公園；5K 在大佳河濱公園起跑。</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="選擇距離">
+        <button class="tab" type="button" role="tab" id="tab-21" aria-controls="panel-21" aria-selected="true"><b>21K</b>半馬</button>
+        <button class="tab tab--10" type="button" role="tab" id="tab-10" aria-controls="panel-10" aria-selected="false" tabindex="-1"><b>10K</b>挑戰・慢跑</button>
+        <button class="tab tab--5" type="button" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false" tabindex="-1"><b>5K</b>休閒・親子</button>
+      </div>
+      <div class="route-panel" role="tabpanel" id="panel-21" aria-labelledby="tab-21">
+        <figure class="mat"><a href="assets/img/route-21k.webp" target="_blank" rel="noopener"><img src="assets/img/route-21k.webp" alt="21K 半馬路線圖" width="806" height="758" loading="lazy"></a></figure>
+        <div class="route-facts">
+          <dl>
+            <dt>起跑</dt><dd>總統府前凱達格蘭大道・05:30</dd>
+            <dt>終點</dt><dd>大佳河濱公園（龍舟看台）</dd>
+            <dt>限時</dt><dd>210 分鐘（09:00 比賽結束）</dd>
+            <dt>關門</dt><dd>起跑後 10 分鐘關閉起點；新生高架／濟南路口 06:40</dd>
+            <dt>計時</dt><dd>晶片計時，列入總排名與分組敘獎</dd>
+          </dl>
+          <div class="notice"><span class="notice__mark" aria-hidden="true">!</span><p>21K 須年滿 16 歲（2011 年以前出生）；未滿 18 歲需監護人同意。</p></div>
+        </div>
+      </div>
+      <div class="route-panel" role="tabpanel" id="panel-10" aria-labelledby="tab-10" hidden>
+        <figure class="mat"><a href="assets/img/route-10k.webp" target="_blank" rel="noopener"><img src="assets/img/route-10k.webp" alt="10K 路線圖" width="806" height="1427" loading="lazy"></a></figure>
+        <div class="route-facts">
+          <dl>
+            <dt>起跑</dt><dd>總統府前凱達格蘭大道・挑戰組 05:50／慢跑組 06:00</dd>
+            <dt>終點</dt><dd>大佳河濱公園網球場</dd>
+            <dt>限時</dt><dd>100 分鐘</dd>
+            <dt>關門</dt><dd>起跑後 10 分鐘關閉起點</dd>
+            <dt>計時</dt><dd>挑戰組：男女總排名各取前十；慢跑組：晶片計時、不列名次</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="route-panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" hidden>
+        <figure class="mat"><a href="assets/img/route-5k.webp" target="_blank" rel="noopener"><img src="assets/img/route-5k.webp" alt="5K 路線圖與親子組說明" width="806" height="773" loading="lazy"></a></figure>
+        <div class="route-facts">
+          <dl>
+            <dt>起跑</dt><dd>大佳河濱公園 8 號水門・休閒組 08:00／親子組 08:10</dd>
+            <dt>限時</dt><dd>90 分鐘（09:40 比賽結束）</dd>
+            <dt>計時</dt><dd>不使用晶片、不計成績與名次</dd>
+            <dt>寄物</dt><dd>不提供寄物</dd>
+            <dt>親子組</dt><dd>鼓勵家長與 12 歲以下孩童一起參加，適合手抱幼兒、推嬰兒車的家庭。<b>家長與孩童皆須報名</b>（一人一份）</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="notice notice--spaced"><span class="notice__mark" aria-hidden="true">!</span><p>大會公告：因「大佳河濱公園再造工程」，路線可能依比賽當日現況縮短、延長或改道，參賽者應配合。完整路線以<a id="officialRouteLink" href="https://irunner.biji.co/2027NGR?page=5615" target="_blank" rel="noopener">大會官網</a>為準。</p></div>
+    </div>
+  </section>
+
+  <!-- KIT -->
+  <section class="band" id="kit">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">Race Kit</p>
+        <h2 class="band__title">紀念品與完賽物資</h2>
+        <p class="band__lead">紀念衫、號碼布、晶片、電子手冊（升級組再加衣保袋）會在賽前寄出；環保水杯比賽當天起跑前領，獎牌、毛巾、跑帽完賽後憑號碼布領。</p>
+      </div>
+      <div class="kit-lead">
+        <figure class="mat"><a href="assets/img/souvenir-table.webp" target="_blank" rel="noopener"><img src="assets/img/souvenir-table.webp" alt="各組別選手紀念品一覽表" width="1080" height="692" loading="lazy"></a></figure>
+        <div class="route-facts">
+          <dl>
+            <dt>賽前郵寄</dt><dd>紀念衫、號碼布＋別針、電子活動手冊；21K・10K 另有晶片；升級組另有衣保袋</dd>
+            <dt>比賽當天起跑前</dt><dd>環保水杯（賽事全程不提供一次性杯子）</dd>
+            <dt>完賽後</dt><dd>完賽獎牌、運動毛巾；21K・10K 另有運動跑帽與電子成績證明；5K 為電子完跑證明</dd>
+          </dl>
+          <div class="notice"><span class="notice__mark" aria-hidden="true">i</span><p>一覽表中的「早鳥禮－號碼布腰帶」限 2026/10/31 前完成報名並繳費，團報時程趕不上，<b>本次團報不含早鳥禮</b>。</p></div>
+        </div>
+      </div>
+      <div class="medal-feature">
+        <img src="assets/img/medals.webp" alt="完賽獎牌：21K 金色、10K 銀色、5K 銅色，正面有石虎與黃框設計" width="810" height="1412" loading="lazy">
+        <div class="medal-feature__body">
+          <p class="when">完賽後憑號碼布領取</p>
+          <h3>完賽獎牌</h3>
+          <p>三個距離各有專屬顏色，一面是石虎與國家地理黃框，另一面是距離與 RUN FOR EARTH 2027.3.14。在限時內完賽才能領取。</p>
+          <div class="medal-row"><span class="g"><b>21K</b>金</span><span class="s"><b>10K</b>銀</span><span class="c"><b>5K</b>銅</span></div>
+        </div>
+      </div>
+      <div class="kit-grid">
+        <article class="kit">
+          <div class="kit__img"><img src="assets/img/tee-general.webp" alt="活動紀念衫正面與背面，淡黃色" width="1080" height="1075" loading="lazy"></div>
+          <div class="kit__body"><p class="when">賽前郵寄</p><h3>活動紀念衫</h3><p>寶特瓶環保紗製作，中性尺寸。</p><div class="who"><span class="chip k21">21K</span><span class="chip k10">10K</span><span class="chip k5">5K 休閒組</span></div></div>
+        </article>
+        <article class="kit">
+          <div class="kit__img"><img src="assets/img/tee-family.webp" alt="5K 親子組專屬紀念衫，印有石虎圖案" width="1080" height="950" loading="lazy"></div>
+          <div class="kit__body"><p class="when">賽前郵寄</p><h3>親子組專屬紀念衫・石虎款</h3><p>以瀕危的臺灣原生貓科動物石虎為靈感。</p><div class="who"><span class="chip k5">5K 親子組</span></div></div>
+        </article>
+        <article class="kit">
+          <div class="kit__img"><img src="assets/img/bag.webp" alt="黑黃配色賽事衣保袋" width="810" height="968" loading="lazy"></div>
+          <div class="kit__body"><p class="when">賽前郵寄</p><h3>賽事衣保袋</h3><p>600D PVC 防潑水、防水拉鍊、透明識別袋，63×24×39 cm，符合大會寄物規格。</p><div class="who"><span class="chip k21">21K 升級組</span><span class="chip k10">10K 升級組</span></div></div>
+        </article>
+        <article class="kit">
+          <div class="kit__img"><img src="assets/img/towel.webp" alt="淺藍色運動毛巾" width="810" height="520" loading="lazy"></div>
+          <div class="kit__body"><p class="when">完賽領取</p><h3>運動毛巾</h3><p>101 與河岸線條設計。</p><div class="who"><span class="chip k21">21K</span><span class="chip k10">10K</span><span class="chip k5">5K</span></div></div>
+        </article>
+        <article class="kit">
+          <div class="kit__img"><img src="assets/img/cup.webp" alt="可重複使用的環保水杯" width="810" height="780" loading="lazy"></div>
+          <div class="kit__body"><p class="when">比賽當天起跑前領取</p><h3>環保水杯</h3><p>6.5×10.5 cm。賽事全程不提供一次性紙杯與塑膠杯，記得帶著跑。</p><div class="who"><span class="chip k21">21K</span><span class="chip k10">10K</span><span class="chip k5">5K</span></div></div>
+        </article>
+        <article class="kit">
+          <div class="kit__img"><img src="assets/img/cap.webp" alt="黑色運動跑帽側面與正面" width="810" height="760" loading="lazy"></div>
+          <div class="kit__body"><p class="when">完賽領取</p><h3>運動跑帽</h3><p>網眼透氣款。</p><div class="who"><span class="chip k21">21K</span><span class="chip k10">10K</span></div></div>
+        </article>
+      </div>
+      <p class="fine">圖片僅供示意，以實品為準。</p>
+    </div>
+  </section>
+
+  <!-- PAY -->
+  <section class="band band--alt" id="pay">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">How to Join</p>
+        <h2 class="band__title">報名流程與匯款資訊</h2>
+      </div>
+      <div class="pay-layout">
+        <ol class="steps">
+          <li><div><b>按「我要報名」，閱讀參賽聲明</b><span>閱讀完，請點同意。</span></div></li>
+          <li><div><b>填寫報名表</b><span>選身分、組別、尺寸，填參賽者資料。系統會算出你的應匯金額。</span></div></li>
+          <li><div><b>依金額匯款</b><span>一人匯一筆，金額要和報名表上的「應匯金額」一樣。</span></div></li>
+          <li><div><b>填匯款帳號後五碼並送出</b><span>填的是「你匯出款項的帳號」最後 5 碼。</span></div></li>
+        </ol>
+        <div class="bank" id="bankCard">
+          <div class="bank__top"><span class="bank__label">Transfer</span><img src="assets/img/nidrc-logo-navy.png" alt="" width="517" height="120"></div>
+          <dl>
+            <dt>銀行</dt><dd><span><span data-bank="bankCode">822</span> <span data-bank="bankName">中國信託商業銀行</span></span><button class="copy js-copy" type="button" data-copy-from="bankCode">複製代碼</button></dd>
+            <dt>分行</dt><dd data-bank="branch">瑞光分行</dd>
+            <dt>帳號</dt><dd><span class="acct" data-bank="account">7165-4022-7006</span><button class="copy js-copy" type="button" data-copy-from="accountDigits">複製帳號</button></dd>
+            <dt>戶名</dt><dd data-bank="name">江凱為</dd>
+          </dl>
+          <div class="bank__warn" role="note"><span class="notice__mark" aria-hidden="true">!</span><p><b>匯款時「備註」請留空，不要填任何文字</b>，才能查詢到匯款帳號後五碼。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNUP -->
+  <section class="band signup" id="signup">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">Sign Up</p>
+        <h2 class="band__title">團報報名表</h2>
+        <p class="band__lead">資料會直接填入大會團體報名表，請與身分證件完全一致。一人填一份，幫家人朋友報名請分開填寫。</p>
+      </div>
+
+      <div class="gate" id="gate">
+        <div>
+          <h3 id="gateTitle">先閱讀並同意參賽聲明</h3>
+          <p id="gateText">同意大會簡章第十八、二十條及 NID 團報資料說明後，報名表會在這裡打開。</p>
+        </div>
+        <button class="btn btn--sun btn--lg js-open-terms" type="button">閱讀參賽聲明</button>
+      </div>
+
+      <div class="form-layout" id="formArea" hidden>
+        <form class="form" id="signupForm" novalidate>
+          <input class="hp" type="text" id="f-website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <!-- STEP 1 -->
+          <fieldset class="step" id="step-1">
+            <legend><span class="step__head"><span class="step__no">1</span>報名身分</span></legend>
+            <div class="field" data-field="member">
+              <span class="label" id="lbl-member">你是 NID 當期學員嗎？<span class="req">*</span></span>
+              <div class="choices choices--3" role="radiogroup" aria-labelledby="lbl-member">
+                <label class="choice"><input type="radio" name="member" id="f-member-student" value="student"><span class="choice__body"><b>當期學員</b><small>運費 <span class="num" data-cfg="shipStudent">NT$50</span></small></span></label>
+                <label class="choice"><input type="radio" name="member" id="f-member-child" value="child"><span class="choice__body"><b>當期學員的小孩</b><small>運費 <span class="num" data-cfg="shipChild">NT$50</span>・未滿 18 歲，爸爸或媽媽是當期學員</small></span></label>
+                <label class="choice"><input type="radio" name="member" id="f-member-guest" value="guest"><span class="choice__body"><b>非當期學員</b><small>運費 <span class="num" data-cfg="shipGuest">NT$80</span>・需有當期學員朋友</small></span></label>
+              </div>
+            </div>
+            <div class="field" data-field="className" data-when="member=student" hidden>
+              <label for="f-class">你的班級<span class="req">*</span></label>
+              <select class="select" id="f-class" name="className"></select>
+              <input class="input" type="text" id="f-class-other" name="classOther" placeholder="請填寫班級名稱，例如：週三北田跑步班" hidden>
+              <p class="help">選單是 NID 目前開課的班級；找不到你的班請選「其他」自行填寫。</p>
+            </div>
+            <div data-when="member=guest" hidden>
+              <div class="notice notice--before"><span class="notice__mark" aria-hidden="true">i</span><p>非當期學員要有一位<b>目前是當期學員</b>的朋友，才能參加團報。請填寫這位朋友的姓名和班級。</p></div>
+              <div class="grid-2">
+                <div class="field" data-field="refName">
+                  <label for="f-ref-name">當期學員朋友姓名<span class="req">*</span></label>
+                  <input class="input" type="text" id="f-ref-name" name="refName" autocomplete="off" maxlength="30">
+                </div>
+                <div class="field" data-field="refClass">
+                  <label for="f-ref-class">朋友的班級<span class="req">*</span></label>
+                  <select class="select" id="f-ref-class" name="refClass"></select>
+                  <input class="input" type="text" id="f-ref-class-other" name="refClassOther" placeholder="請填寫朋友的班級" hidden>
+                </div>
+              </div>
+            </div>
+            <div data-when="member=child" hidden>
+              <div class="notice notice--before"><span class="notice__mark" aria-hidden="true">i</span><p>比賽當天<b>未滿 18 歲</b>、爸爸或媽媽是<b>當期學員</b>的小朋友，運費算當期學員的價格。請填爸爸或媽媽的姓名和班級，小編會核對；下面的資料請填小朋友本人的。</p></div>
+              <div class="grid-2">
+                <div class="field" data-field="parentName">
+                  <label for="f-parent-name">爸爸或媽媽的姓名<span class="req">*</span></label>
+                  <input class="input" type="text" id="f-parent-name" name="parentName" autocomplete="off" maxlength="30">
+                </div>
+                <div class="field" data-field="parentClass">
+                  <label for="f-parent-class">爸爸或媽媽的班級<span class="req">*</span></label>
+                  <select class="select" id="f-parent-class" name="parentClass"></select>
+                  <input class="input" type="text" id="f-parent-class-other" name="parentClassOther" placeholder="請填寫爸爸或媽媽的班級" hidden>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- STEP 2 -->
+          <fieldset class="step" id="step-2">
+            <legend><span class="step__head"><span class="step__no">2</span>組別與紀念衫</span></legend>
+            <div class="field" data-field="category">
+              <span class="label" id="lbl-cat">報名組別<span class="req">*</span></span>
+              <div class="cat-pick" id="catPick" role="radiogroup" aria-labelledby="lbl-cat"><!-- rendered --></div>
+            </div>
+            <div class="notice notice--before" data-when="category=5K-FAM" hidden><span class="notice__mark" aria-hidden="true">i</span><p>親子組<b>家長與孩童皆須報名</b>，一人填一份。這份送出後，可以按「再幫一位報名」接著填另一位；小朋友請填小朋友本人的資料。</p></div>
+            <div class="field" data-field="size">
+              <label for="f-size" id="lbl-size">紀念衫尺寸<span class="req">*</span></label>
+              <select class="select" id="f-size" name="size"></select>
+              <p class="help">中性尺寸，6–12 號為兒童版。報名後不能更換尺寸，請對照下方大會尺寸表。</p>
+              <figure class="size-ref" id="sizeChart">
+                <div class="size-ref__scroll" tabindex="0" aria-label="大會紀念衫尺寸表，可左右捲動">
+                  <a href="assets/img/size-chart.webp" target="_blank" rel="noopener"><img src="assets/img/size-chart.webp" alt="大會紀念衫尺寸表：6、8、10、12 號與 XS 到 3XL 的肩寬、胸寬、衣長、袖長（公分）" width="1080" height="490" loading="lazy"></a>
+                </div>
+                <figcaption>大會尺寸表・單位 cm・平放丈量，誤差 ±2–2.5 cm 屬正常<span class="size-ref__swipe">・左右滑動看完整尺寸</span></figcaption>
+              </figure>
+            </div>
+          </fieldset>
+
+          <!-- STEP 3 -->
+          <fieldset class="step" id="step-3">
+            <legend><span class="step__head"><span class="step__no">3</span>參賽者資料</span></legend>
+            <p class="step__hint">請與身分證件一致，大會會用來投保與核對組別資格。</p>
+            <div class="grid-2">
+              <div class="field" data-field="name">
+                <label for="f-name">姓名<span class="req">*</span></label>
+                <input class="input" type="text" id="f-name" name="name" autocomplete="name" maxlength="40">
+              </div>
+              <div class="field" data-field="gender">
+                <span class="label" id="lbl-gender">性別<span class="req">*</span></span>
+                <div class="choices" role="radiogroup" aria-labelledby="lbl-gender">
+                  <label class="choice choice--inline"><input type="radio" name="gender" id="f-gender-m" value="男"><span class="choice__body"><b>男</b></span></label>
+                  <label class="choice choice--inline"><input type="radio" name="gender" id="f-gender-f" value="女"><span class="choice__body"><b>女</b></span></label>
+                </div>
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="field" data-field="birth">
+                <span class="label" id="lbl-birth">出生年月日（西元）<span class="req">*</span></span>
+                <div class="dob" role="group" aria-labelledby="lbl-birth">
+                  <select class="select" id="f-birth-y" name="birthY" aria-label="出生年"></select>
+                  <select class="select" id="f-birth-m" name="birthM" aria-label="出生月"></select>
+                  <select class="select" id="f-birth-d" name="birthD" aria-label="出生日"></select>
+                </div>
+              </div>
+              <div class="field" data-field="nationality">
+                <label for="f-nat">國籍<span class="req">*</span></label>
+                <select class="select" id="f-nat" name="nationality"></select>
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="field" data-field="idno">
+                <label for="f-id" id="lbl-id">身分證字號<span class="req">*</span></label>
+                <input class="input input--upper" type="text" id="f-id" name="idno" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="20" placeholder="A123456789">
+                <p class="help" id="idHelp">外籍人士請填居留證或護照號碼。</p>
+              </div>
+              <div class="field" data-field="phone">
+                <label for="f-phone">行動電話<span class="req">*</span></label>
+                <input class="input" type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="0912345678">
+              </div>
+            </div>
+            <div class="field" data-field="email">
+              <label for="f-email">Email<span class="req">*</span></label>
+              <input class="input" type="email" id="f-email" name="email" autocomplete="email" inputmode="email" maxlength="80" placeholder="name@example.com">
+              <p class="help">只用於團報相關聯繫。</p>
+            </div>
+            <div class="grid-3">
+              <div class="field" data-field="ecName">
+                <label for="f-ec-name">緊急聯絡人<span class="req">*</span></label>
+                <input class="input" type="text" id="f-ec-name" name="ecName" maxlength="40">
+              </div>
+              <div class="field" data-field="ecPhone">
+                <label for="f-ec-phone">緊急聯絡人電話<span class="req">*</span></label>
+                <input class="input" type="tel" id="f-ec-phone" name="ecPhone" inputmode="tel" maxlength="20">
+              </div>
+              <div class="field" data-field="ecRelation">
+                <label for="f-ec-rel">關係<span class="req">*</span></label>
+                <input class="input" type="text" id="f-ec-rel" name="ecRelation" maxlength="20" placeholder="例如：配偶、父母">
+              </div>
+            </div>
+            <div id="guardianBlock" hidden>
+              <div class="notice notice--before"><span class="notice__mark" aria-hidden="true">!</span><p>比賽當天未滿 18 歲，需要監護人同意並填寫監護人資料。</p></div>
+              <div class="grid-3">
+                <div class="field" data-field="gName">
+                  <label for="f-g-name">監護人姓名<span class="req">*</span></label>
+                  <input class="input" type="text" id="f-g-name" name="gName" maxlength="40">
+                </div>
+                <div class="field" data-field="gId">
+                  <label for="f-g-id">監護人身分證字號<span class="req">*</span></label>
+                  <input class="input input--upper" type="text" id="f-g-id" name="gId" autocapitalize="characters" spellcheck="false" maxlength="20">
+                </div>
+                <div class="field" data-field="gPhone">
+                  <label for="f-g-phone">監護人聯絡電話<span class="req">*</span></label>
+                  <input class="input" type="tel" id="f-g-phone" name="gPhone" inputmode="tel" maxlength="20">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- STEP 4 -->
+          <fieldset class="step" id="step-4">
+            <legend><span class="step__head"><span class="step__no">4</span>官方加購（選填）</span></legend>
+            <p class="step__hint">不需要可以直接跳過。加購品會和報到物資一起寄出。</p>
+            <div id="addonList" class="addon-list"><!-- rendered --></div>
+          </fieldset>
+
+          <!-- STEP 5 -->
+          <fieldset class="step" id="step-5">
+            <legend><span class="step__head"><span class="step__no">5</span>匯款與送出</span></legend>
+            <div class="fee-inline" aria-label="費用明細">
+              <ul class="lines" id="sumLinesInline"></ul>
+            </div>
+            <div class="bank-mini">
+              <div class="row"><span>銀行</span><b><span data-bank="bankCode">822</span> <span data-bank="bankName">中國信託商業銀行</span> <span data-bank="branch">瑞光分行</span></b></div>
+              <div class="row"><span>帳號</span><div class="acct-wrap"><b class="acct" data-bank="account">7165-4022-7006</b><button class="copy copy--dark js-copy" type="button" data-copy-from="accountDigits">複製帳號</button></div></div>
+              <div class="row"><span>戶名</span><b data-bank="name">江凱為</b></div>
+              <div class="row"><span>應匯金額</span><b class="num pay-amount" id="payAmount">—</b></div>
+            </div>
+            <div class="notice notice--alert"><span class="notice__mark" aria-hidden="true">!</span><p><b>匯款時「備註」請留空，不要填任何文字</b>，才能查詢到匯款帳號後五碼。</p></div>
+            <div class="grid-2">
+              <div class="field" data-field="last5">
+                <label for="f-last5">你的匯款帳號後五碼<span class="req">*</span></label>
+                <input class="input input--mono" type="text" id="f-last5" name="last5" inputmode="numeric" pattern="[0-9]*" autocomplete="off" placeholder="12345">
+                <p class="help">填「你匯出款項的帳號」最後 5 碼，不是上面的收款帳號。</p>
+              </div>
+              <div class="field" data-field="payDate">
+                <label for="f-paydate">匯款日期<span class="req">*</span></label>
+                <input class="input" type="date" id="f-paydate" name="payDate">
+              </div>
+            </div>
+            <div class="field" data-field="note">
+              <label for="f-note">備註給 NID（選填）</label>
+              <textarea class="input" id="f-note" name="note" rows="2" maxlength="300" placeholder="例如：和家人一起報名、加購衣服要不同尺寸"></textarea>
+            </div>
+            <div class="field" data-field="paid">
+              <label class="check" for="f-paid"><input type="checkbox" id="f-paid" name="paid"><span>我已依上方「應匯金額」完成匯款，並確認以上資料與證件一致。我了解完成報名後<b>不能更換姓名、組別、尺寸，也不能轉讓</b>。</span></label>
+            </div>
+          </fieldset>
+
+          <div class="form-error" id="formError" role="alert" hidden></div>
+          <div class="form__actions">
+            <button class="btn btn--sun btn--lg" type="submit" id="submitBtn">檢查資料並送出</button>
+            <p>送出前會再讓你確認一次。</p>
+          </div>
+        </form>
+
+        <aside class="summary" id="summary" aria-live="polite">
+          <h3>費用明細 <span>YOUR FEE</span></h3>
+          <ul class="lines" id="sumLines"></ul>
+          <div class="sum-total"><span>應匯金額</span><b id="sumTotal">—</b></div>
+          <p class="tiny">晶片押金於比賽當天 10:30 前歸還晶片後退還。團體訂單部分退費時，運費不退。</p>
+        </aside>
+      </div>
+
+      <div id="doneArea" hidden></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band band--alt" id="faq">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="band__kicker">Good to Know</p>
+        <h2 class="band__title">注意事項</h2>
+      </div>
+      <div class="faq">
+        <details class="fold">
+          <summary>報名後可以換組別、尺寸或轉讓嗎？</summary>
+          <div class="fold__body"><p>不行。大會規定完成報名繳費後，不得更換姓名、參賽項目或衣服尺寸，也不能把名額轉讓給別人。送出前請再檢查一次。</p></div>
+        </details>
+        <details class="fold">
+          <summary>退費怎麼算？</summary>
+          <div class="fold__body">
+            <ul>
+              <li><b>2026/10/1–2027/1/14</b>：退（報名費＋晶片＋郵寄費＋加購＋手續費）× 80%，物資不寄送。</li>
+              <li><b>2027/1/15–2/21</b>：退報名費 × 60%，加購品與郵寄費不退，物資照寄。</li>
+              <li><b>2027/2/22–3/15</b>：退報名費 × 50%，限天災、傷病、兵役、婚喪等並附證明。</li>
+              <li>團體訂單只有部分選手退費時，<b>郵寄費不退</b>。要退費請先找 <span data-cfg="contact">NID 團報窗口</span>，由領隊向大會申請。</li>
+            </ul>
+          </div>
+        </details>
+        <details class="fold">
+          <summary>晶片押金什麼時候退？</summary>
+          <div class="fold__body"><p>21K、10K 比賽當天 10:30 前歸還晶片，即可退還 NT$100。逾時可在冠軍晶片計時的其他賽事退還。5K 沒有晶片，不收押金。</p></div>
+        </details>
+        <details class="fold">
+          <summary>物資什麼時候寄？</summary>
+          <div class="fold__body"><p>大會預計 2027/2/22–3/5 寄出報到物資（紀念衫、號碼布、晶片、電子手冊；升級組含衣保袋）。收到物資即完成報到，比賽當天現場不受理報到。</p></div>
+        </details>
+        <details class="fold">
+          <summary>寄物規定</summary>
+          <div class="fold__body"><p>只有 21K、10K 提供寄物（04:00–09:30），一律使用符合大會規格的衣保袋：63×24×39 cm（±3 cm）、全拉鍊、附衣保卡透明口袋。不能用塑膠袋或開放式提袋。5K 不提供寄物。</p></div>
+        </details>
+        <details class="fold">
+          <summary>年齡限制</summary>
+          <div class="fold__body"><p>21K 須年滿 16 歲（2011 年以前出生）。比賽當天未滿 18 歲，需填寫監護人資料並取得同意。5K 親子組鼓勵家長與 12 歲以下孩童一起參加，家長與孩童皆須報名（一人填一份）。</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <img src="assets/img/nid-logo.png" alt="NID RUN CLUB" width="419" height="240">
+    </div>
+    <div>
+      <p>本頁為 NID RUN CLUB 團體報名收件頁，不是大會官方報名網站。賽事資訊以大會公告為準。</p>
+      <p>賽事圖片取自 2027 國家地理路跑官方報名頁 © The Walt Disney Company (Taiwan) Ltd.</p>
+      <p class="footer__links"><a id="officialLink" href="https://irunner.biji.co/2027NGR" target="_blank" rel="noopener">大會官網（筆記報名）</a><a href="https://www.nidstudio.online" target="_blank" rel="noopener">NID 官網</a><span>團報窗口：<span data-cfg="contact">請洽各班教練</span></span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- TOTAL BAR (phones) -->
+<div class="totalbar" id="totalBar" aria-hidden="true">
+  <div><span id="tbLabel">應匯金額</span><b id="tbTotal">—</b></div>
+  <a class="btn btn--sun btn--sm" href="#step-5">去匯款・送出</a>
+</div>
+
+<!-- TERMS MODAL -->
+<div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle" hidden>
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__box">
+    <div class="modal__head">
+      <div>
+        <h2 id="termsTitle">參賽聲明</h2>
+        <p>大會簡章第十八條、第二十條重點與 NID 團報資料說明</p>
+      </div>
+      <button class="modal__x" type="button" data-close aria-label="關閉">×</button>
+    </div>
+    <div class="modal__body" id="termsBody" tabindex="0">
+      <div class="terms">
+        <p class="src">以下整理自大會活動簡章，完整條文以<a class="js-official-rules" href="https://irunner.biji.co/2027NGR?page=5606" target="_blank" rel="noopener">大會官網簡章</a>為準。報名即視為同意大會競賽規程的所有規定。</p>
+
+        <section>
+          <h3>十八、特別聲明與活動切結 <small>Article 18</small></h3>
+          <h4>衣物保管</h4>
+          <ul>
+            <li>保管時間為 2027/3/14 04:00–09:30，只提供 21K、10K 寄物。</li>
+            <li>一律使用符合大會規格的衣保袋（長 63 × 寬 24 × 高 39 cm，±3 cm；全拉鍊；袋身有可放衣保卡的透明口袋，23 × 16 cm）。寄物前把號碼布上的「衣保專用卡」沿虛線撕下，放進透明口袋。</li>
+            <li>領回時到原寄物車出示本人號碼布。大會不提供打包袋，禁用塑膠袋或開放式提袋。</li>
+            <li>不得寄放易打翻或髒污的飲料食物、活體動物、危險物品與貴重物品；貴重物品請自行保管，遺失大會不負責。</li>
+          </ul>
+          <h4>號碼布與晶片</h4>
+          <ul>
+            <li>21K、10K 使用晶片計時，請依說明配戴；因個人操作不當沒有成績，大會不負責。</li>
+            <li>晶片、號碼布遺失不補發；完賽物資憑號碼布領取，請隨身攜帶身分證備查。</li>
+            <li>比賽當天未繳回晶片，押金需到冠軍晶片其他賽事辦理退還。</li>
+          </ul>
+          <h4>安全事項</h4>
+          <ul>
+            <li>請依自己的體能選擇能在限時內完成的距離，安全第一。</li>
+            <li>有心臟、血管、糖尿病等病史者，請勿隱瞞病情並請勿參加；否則比賽中發生意外須自行負責，主辦單位不負任何責任。</li>
+            <li>大會裁判、醫師或交管人員有權視選手體能與道路安全中止或暫停比賽，選手不得異議。</li>
+            <li>無法在限時內完賽者，須搭乘大會收容車回終點；比賽中請注意往來車輛與行人。</li>
+          </ul>
+          <h4>其他事項</h4>
+          <ul>
+            <li>遇颱風、集會遊行、空氣品質超標等不可抗力因素，大會以選手安全為考量，有權取消、延期、更換場地或路線、延長或縮短距離，選手不得異議。</li>
+            <li>不得借助他人或輔具完成比賽；報名組別與身分證明不符者，大會有權取消參賽資格。</li>
+            <li>選手須通過起點、終點與檢查點的晶片感應地墊；超過起跑時間 10 分鐘，大會有權限制出發且不計成績。</li>
+            <li>垃圾請丟進補給站前後的垃圾桶。</li>
+            <li>大會有權將比賽錄影、照片與成績在各地播放、展出及刊登於網站與刊物，參賽者同意肖像與成績用於比賽相關宣傳。</li>
+            <li>為環保，秩序冊不再提供選手名單。</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>二十、個資法與肖像權使用說明 <small>Article 20</small></h3>
+          <ul>
+            <li><b>蒐集目的</b>：辦理 2027 國家地理路跑及相關保險作業。</li>
+            <li><b>資料類別</b>：姓名、身分證字號、聯絡電話、戶籍地址、身分證、電子信箱、肖像、影音等。</li>
+            <li><b>利用期間</b>：特定目的存續期間，或依法令、契約約定的保存年限，或主辦單位執行業務必要的保存期間。<b>地區</b>：活動宣傳地區。</li>
+            <li><b>利用對象</b>：活動授權的主辦、承辦、協力單位，通匯銀行、業務委外機構、國際傳輸資料接收者、依法有調查權機關或金融監理機關，以及主辦單位共同行銷或合作對象；以自動化或非自動化方式利用。</li>
+            <li><b>你的權利</b>：可依個資法第三條向主辦單位查詢、請求閱覽或製給複製本（得酌收成本費）、請求補充或更正、請求停止蒐集處理利用或刪除；主辦單位因執行業務必要者，得不依請求辦理。</li>
+            <li>你可以選擇不提供個人資料，但主辦單位將無法辦理審核，致無法完成報名、成績受獎、新聞媒體等相關作業。</li>
+            <li><b>肖像權</b>：你同意授權主辦單位及其指定之人，將你的肖像、影音用於相關廣告物件（包括官方網站、臉書、部落格等），並得公開使用、利用、販售；並拋棄對主辦單位及其指定之人就上述影音、照片的民事請求權及刑事告訴權。</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>NID 團報資料說明 <small>NID RUN CLUB</small></h3>
+          <ul>
+            <li>你在本表填寫的資料，NID 只用於本次 2027 國家地理路跑團體報名：填入大會團報表、匯款對帳、物資寄送與賽事相關聯繫。</li>
+            <li>資料會提供給大會主辦、承辦單位與筆記報名系統，用於報名、保險與成績作業。</li>
+            <li>需要查詢、更正或刪除資料，請洽 <span data-cfg="contact">NID 團報窗口</span>。</li>
+          </ul>
+        </section>
+        <p class="terms__end" id="termsEnd">已閱讀到最後</p>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <div class="row">
+        <button class="btn btn--line" type="button" id="btnDisagree">不同意</button>
+        <button class="btn btn--sun" type="button" id="btnAgree" disabled>同意，開始報名</button>
+      </div>
+      <p class="hint" id="agreeHint">請先閱讀到最下方，「同意」按鈕就會亮起。</p>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEW MODAL -->
+<div class="modal" id="reviewModal" role="dialog" aria-modal="true" aria-labelledby="reviewTitle" hidden>
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__box">
+    <div class="modal__head">
+      <div>
+        <h2 id="reviewTitle">確認報名資料</h2>
+        <p>送出後不能更換姓名、組別、尺寸，請仔細核對。</p>
+      </div>
+      <button class="modal__x" type="button" data-close aria-label="關閉">×</button>
+    </div>
+    <div class="modal__body"><div class="review" id="reviewBody"></div></div>
+    <div class="modal__foot">
+      <div class="row">
+        <button class="btn btn--line" type="button" data-close>返回修改</button>
+        <button class="btn btn--sun" type="button" id="btnConfirm">確認送出</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DONE MODAL：報名完成，請學員截圖並傳給官方 LINE 小編（點外面不會關，避免還沒截圖就關掉） -->
+<div class="modal modal--done" id="doneModal" role="dialog" aria-modal="true" aria-labelledby="doneModalTitle" hidden>
+  <div class="modal__scrim"></div>
+  <div class="modal__box">
+    <div class="modal__body shot" id="doneShot"></div>
+    <div class="modal__foot">
+      <div class="row">
+        <button class="btn btn--line" type="button" data-close>我截好了</button>
+        <a class="btn btn--sun" id="doneLineBtn" target="_blank" rel="noopener" hidden>傳給官方 LINE 小編</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="testbar" id="testBar" hidden>測試模式：開放前測試用，送出的資料會標示【測試】，正式開放前請在試算表刪除。</div>
+
+<script src="assets/js/countries.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/app.js"></script>
+<!-- ARTIFACT:BODY-END -->
+</body>
+</html>
