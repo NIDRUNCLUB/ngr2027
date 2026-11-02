@@ -750,8 +750,10 @@
     var p = String(iso || '').split('-');
     return p.length === 3 ? Number(p[1]) + '/' + Number(p[2]) : String(iso || '');
   }
-  /* 開啟官方帳號聊天室並先打好訊息（LINE URL scheme：line.me/R/oaMessage/{LINE ID}/?{訊息}） */
+  /* 「傳給官方 LINE 小編」按鈕：config.js 有設 line.url（官方帳號頁面）就直接開那一頁；
+     沒設的話改用 LINE URL scheme 開聊天室並先打好訊息（line.me/R/oaMessage/{LINE ID}/?{訊息}） */
   function lineLink(text) {
+    if (C.line && C.line.url) return C.line.url;
     var id = C.line && C.line.id;
     return id ? 'https://line.me/R/oaMessage/' + encodeURIComponent(id) + '/?' + encodeURIComponent(text) : '';
   }
@@ -802,7 +804,7 @@
       '</div>' +
       '<ol class="shot__steps">' +
       '<li><span><b>截圖</b>這個畫面（電源鍵＋音量鍵一起按）。</span></li>' +
-      '<li><span>把截圖<b>傳給 ' + esc(lineName) + ' 小編</b>' + (link ? '：按下面的按鈕，報名資料會先幫你打好。' : '。') + '</span></li>' +
+      '<li><span>把截圖<b>傳給 ' + esc(lineName) + ' 小編</b>' + (link ? (C.line && C.line.url ? '：按下面的按鈕打開官方 LINE。' : '：按下面的按鈕，報名資料會先幫你打好。') : '。') + '</span></li>' +
       (family ? '<li><span>親子組<b>家長與孩童皆須報名</b>：另一位還沒報的話，按「我截好了」再點「再幫一位報名」。</span></li>' : '') +
       '</ol>' + preview;
     var btn = $('#doneLineBtn');
