@@ -89,6 +89,10 @@
   var OPEN_AT = C.openAt ? new Date(C.openAt) : null;
   var CLOSE_AT = C.deadline ? new Date(C.deadline) : null;
   var TEST_MODE = /(^|[#&])test(&|$)/.test(location.hash);
+  // 在已經打開的頁面網址後面加 #test，瀏覽器不會重新載入；這裡自動重新整理，讓測試模式馬上生效
+  window.addEventListener('hashchange', function () {
+    if (!TEST_MODE && /(^|[#&])test(&|$)/.test(location.hash)) location.reload();
+  });
   var WEEK = ['日', '一', '二', '三', '四', '五', '六'];
   var GATE_DEFAULT = null;
   var currentPhase = null;
